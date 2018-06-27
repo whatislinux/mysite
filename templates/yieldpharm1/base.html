@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>yuntupharm</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: "微软雅黑";
+            font-size: 12px;
+            line-height: 26px;
+            background-color: #cccccc;
+        }
+
+        .outer {
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        .logo {
+            float: left;
+        }
+
+        .translate {
+            float: right;
+            margin-top: 1%;
+        }
+
+        .clear {
+            clear: both;
+            height: 0px;
+        }
+
+        .nav ul li {
+            float: left;
+            list-style-type: none;
+            padding: 0px 40px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            background: url("/static/imgs/nav_li_bj2.gif") no-repeat right center;
+        }
+
+        .content_left {
+            float: left;
+            width: 220px;
+            margin-left: 10px;
+        }
+
+        .content_center {
+            float: left;
+            width: 520px;
+            margin: 0px 20px 0px 0px;
+        }
+
+        .content_center p {
+            text-indent: 2em;
+        }
+
+        .content_right {
+            float: left;
+            width: 220px;
+        }
+
+        .category {
+            height: 300px;
+        }
+
+        .category ul li {
+            list-style-type: none;
+            background: url("/static/imgs/arrow.gif") no-repeat left center;
+            line-height: 24px;
+            text-indent: 25px;
+            font-weight: bold;
+        }
+
+        .company_pic {
+            float: left;
+            margin: 2px 6px 0px;
+        }
+
+        .foot {
+            width: 1000px;
+            height: 80px;
+            background-color: #2785f9;
+            line-height: 80px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /*图片滚动CSS*/
+        #pictures {
+            /*width: 100%;*/
+            height: 150px;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        #ul1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            width: auto;
+        }
+
+        #ul1 li {
+            float: left;
+            width: 170px;
+            height: 150px;
+            list-style: none;
+        }
+
+        #ul1 li div {
+            height: 120px;
+            width: 170px;
+        }
+
+        .recpic {
+            display: table-cell;
+            /*margin: 0px auto;*/
+            vertical-align: middle;
+            text-align: center;
+            /*background-color: yellow;*/
+        }
+
+        /*img{*/
+        /*display: block;*/
+        /*margin: 0px auto;*/
+        /*background-color: yellow;*/
+        /*vertical-align: middle;*/
+        /*}*/
+        /*#container #ul1 li div{*/
+        /*text-align: center;*/
+        /*}*/
+        #ul1 li .cas {
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById("pictures");
+            var oUl = document.getElementById("ul1");
+            var speed = -1;
+            var oLi = document.getElementsByTagName("li");
+
+            oUl.innerHTML += oUl.innerHTML;//先把图片增加一组
+            oUl.style.width = oLi.length * oLi[0].offsetWidth + "px";
+
+            function move() {
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+                    oUl.style.left = "0";
+                }
+                oUl.style.left = oUl.offsetLeft + speed + "px";
+            }
+
+            var timer = setInterval(move, 30);
+            oDiv.onmouseover = function () {
+                clearInterval(timer);
+            };
+            oDiv.onmouseout = function () {
+                timer = setInterval(move, 30);
+            };
+        }
+    </script>
+</head>
+<body>
+<div class="outer">
+    <div class="top">
+        <div class="logo">
+            <img src="/static/imgs/logo.jpg" alt="logo">
+        </div>
+        <div class="translate">
+            <a href=""><i>图片</i>中文</a>
+            <em>|</em>
+            <a href=""><i>图片</i>英文</a>
+        </div>
+        <div class="clear">
+
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="/yieldpharm1/">首页</a></li>
+                <li><a href="/yieldpharm1/aboutus">公司简介</a></li>
+                <li><a href="/yieldpharm1/products">产品介绍</a></li>
+                <li><a href="">实验室</a></li>
+                <li><a href="">公司新闻</a></li>
+                <li><a href="">信息反馈</a></li>
+                <li><a href="/yieldpharm1/contactus">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="focus">
+        <img src="/static/imgs/banner.jpg" alt="">
+    </div>
+    <div class="content">
+        <div class="content_left">
+            <div class="search">
+                <div class="title">产品搜索</div>
+                <hr width="200">
+                <div>
+                    <form action="/yieldpharm1/search/" method="post">
+                        {% csrf_token %}
+                        <p>
+                            <input type="text" id="search_text" name="search_text" placeholder="请输入产品名称或CAS号" autofocus
+                                   required/>
+                            <input type="submit" value="搜索">
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="category">
+                <div class="title">产品类别</div>
+                <hr width="200">
+                <div>
+                    <ul>
+                        {% for category in category_list %}
+                            <li><a href="/yieldpharm1/{{ category.id }}">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block content_center_right %}
+        {% endblock %}
+    </div>
+    <div class="clear">
+
+    </div>
+    <div class="foot">
+        版权所有 © 2018 苏州弈德医药科技有限公司
+    </div>
+</div>
+</body>
+</html>

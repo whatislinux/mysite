@@ -1,0 +1,65 @@
+{% extends "yieldpharm1/base.html" %}
+
+{% block content_center_right %}
+    <div class="company">
+        <div class="title">产品介绍</div>
+        <hr width="700">
+        <table border="1px" cellspacing="0px" cellpadding="0px" width="700px">
+            <tr>
+                <th>产品名称:</th>
+                <th>{{ product.name }}</th>
+            </tr>
+            <tr>
+                <th>Cas No.:</th>
+                <th>{{ product.cas_no }}</th>
+            </tr>
+            <tr>
+                <th>分子式:</th>
+                <th>{{ product.molecular_ormula }}</th>
+            </tr>
+            <tr>
+                <th>分子量:</th>
+                <th>{{ product.molecular_weight }}</th>
+            </tr>
+            <tr>
+                <th>结构式:</th>
+                <th><img src="/static/imgs/recommand/{{ product.molecular_structure }}" alt=""></th>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
+
+
+{% comment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<body>
+    <table border="1px" cellspacing="0px" cellpadding="0px">
+        <tr>
+            <td>产品名称:</td>
+            <td>{{ product.name }}</td>
+        </tr>
+        <tr>
+            <td>Cas No.:</td>
+            <td>{{ product.cas_no }}</td>
+        </tr>
+        <tr>
+            <td>分子式:</td>
+            <td>{{ product.molecular_ormula }}</td>
+        </tr>
+        <tr>
+            <td>分子量:</td>
+            <td>{{ product.molecular_weight }}</td>
+        </tr>
+        <tr>
+            <td>结构式:</td>
+            <td>{{ product.molecular_structure }}</td>
+        </tr>
+    </table>
+</body>
+</html>
+{% endcomment %}
