@@ -35,19 +35,26 @@
             clear: both;
             height: 0px;
         }
-
+        .nav {
+            height: 30px;
+            background-color: #2785f9;
+        }
         .nav ul li {
             float: left;
             list-style-type: none;
-            padding: 0px 40px;
+            padding: 0px 42px;
+            margin: 0px auto;
             height: 30px;
             line-height: 30px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: bold;
             text-align: center;
-            background: url("/static/imgs/nav_li_bj2.gif") no-repeat right center;
+            background: url("/static/imgs/nav_li_bj2.gif") no-repeat left center;
         }
-
+        .nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
         .content_left {
             float: left;
             width: 220px;
@@ -105,6 +112,7 @@
             height: 150px;
             overflow: hidden;
             position: relative;
+            {#border: 1px solid red;#}
 
         }
 
@@ -114,6 +122,7 @@
             top: 0;
             overflow: hidden;
             width: auto;
+            {#border: 2px solid yellow;#}
         }
 
         #ul1 li {
@@ -151,32 +160,7 @@
             line-height: 20px;
         }
     </style>
-    <script type="text/javascript">
-        window.onload = function () {
-            var oDiv = document.getElementById("pictures");
-            var oUl = document.getElementById("ul1");
-            var speed = -1;
-            var oLi = document.getElementsByTagName("li");
 
-            oUl.innerHTML += oUl.innerHTML;//先把图片增加一组
-            oUl.style.width = oLi.length * oLi[0].offsetWidth + "px";
-
-            function move() {
-                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
-                    oUl.style.left = "0";
-                }
-                oUl.style.left = oUl.offsetLeft + speed + "px";
-            }
-
-            var timer = setInterval(move, 30);
-            oDiv.onmouseover = function () {
-                clearInterval(timer);
-            };
-            oDiv.onmouseout = function () {
-                timer = setInterval(move, 30);
-            };
-        }
-    </script>
 </head>
 <body>
 <div class="outer">
@@ -194,10 +178,10 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="/yieldpharm1/">首页</a></li>
+                <li><a href="/yieldpharm1/">网站首页</a></li>
                 <li><a href="/yieldpharm1/aboutus">公司简介</a></li>
                 <li><a href="/yieldpharm1/products">产品介绍</a></li>
-                <li><a href="">实验室</a></li>
+                <li><a href="/yieldpharm1/lab">实验室</a></li>
                 <li><a href="">公司新闻</a></li>
                 <li><a href="">信息反馈</a></li>
                 <li><a href="/yieldpharm1/contactus">联系我们</a></li>
@@ -245,5 +229,40 @@
         版权所有 © 2018 苏州弈德医药科技有限公司
     </div>
 </div>
+
+<script type="text/javascript">
+        window.onload = function () {
+            var oDiv = document.getElementById("pictures");
+            var oUl = document.getElementById("ul1");
+            var speed = -1;
+            var oLi = document.getElementsByTagName("li");
+
+            oUl.innerHTML += oUl.innerHTML;//先把图片增加一组
+            oUl.style.width = oLi.length * oLi[0].offsetWidth + "px";
+
+            function move() {
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+                    oUl.style.left = "0";
+                }
+                console.log("oUl.offsetLeft", oUl.offsetLeft)
+                console.log("speed", speed);
+                console.log("oUl.offsetLeft+speed", oUl.offsetLeft + speed);
+                oUl.style.left = oUl.offsetLeft + speed + "px";
+            }
+
+            var timer = setInterval(move, 10);
+            console.log(timer)
+            oDiv.onmouseover = function () {
+                console.log("onmouseover begin");
+                clearInterval(timer);
+                console.log("onmouseover end");
+            };
+            oDiv.onmouseout = function () {
+                console.log("onmouseout begin");
+                timer = setInterval(move, 30);
+                console.log("onmouseout end")
+            };
+        }
+    </script>
 </body>
 </html>
