@@ -15,7 +15,15 @@
             </tr>
             <tr>
                 <th>分子式:</th>
-                <th>{{ product.molecular_ormula }}</th>
+                <th>
+                    {% for i in product.molecular_ormula %}
+                        {% if i.isalpha %}
+                            <span>{{ i }}</span>
+                        {% else %}
+                            <sub>{{ i }}</sub>
+                        {% endif %}
+                    {% endfor %}
+                </th>
             </tr>
             <tr>
                 <th>分子量:</th>
