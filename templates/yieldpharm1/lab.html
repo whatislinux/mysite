@@ -1,0 +1,61 @@
+{% extends "yieldpharm1/base.html" %}
+
+{% block content_center_right %}
+    <div class="contact">
+        <div class="title">实验室</div>
+        <hr width="700">
+        <table border="0px" cellspacing="2px" cellpadding="3px" width="640px" style="margin-top: 10px">
+            <tr>
+                <th><img src="/static/imgs/lab/lab001.jpg" alt=""></th>
+                <th><img src="/static/imgs/lab/lab002.jpg" alt=""></th>
+            </tr>
+            <tr>
+                <th><img src="/static/imgs/lab/lab003.jpg" alt=""></th>
+                <th><img src="/static/imgs/lab/lab004.jpg" alt=""></th>
+            </tr>
+            <tr>
+                <th><img src="/static/imgs/lab/lab005.jpg" alt=""></th>
+                <th><img src="/static/imgs/lab/lab006.jpg" alt=""></th>
+            </tr>
+        </table>
+        {% comment %}
+        <div>
+            <ul>
+                <li><img src="/static/imgs/lab/lab001.jpg" alt=""></li>
+                <li><img src="/static/imgs/lab/lab002.jpg" alt=""></li>
+                <li><img src="/static/imgs/lab/lab003.jpg" alt=""></li>
+                <li><img src="/static/imgs/lab/lab004.jpg" alt=""></li>
+                <li><img src="/static/imgs/lab/lab005.jpg" alt=""></li>
+                <li><img src="/static/imgs/lab/lab006.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div>
+            <img src="/static/imgs/contactus.jpg" alt="">
+        </div>
+        {% endcomment %}
+    </div>
+{% endblock %}
+
+{% comment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ydclass</title>
+</head>
+<body>
+    <table border="1px" cellspacing="0px" cellpadding="0px">
+        <tr>
+            <td>产品名称</td>
+            <td>CAS号</td>
+        </tr>
+        {% for product in product_list %}
+            <tr>
+                <td><a href="/yieldpharm1/{{ product.id }}/detail">{{ product.name }}</a></td>
+                <td>{{ product.cas_no }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endcomment %}
