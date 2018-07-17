@@ -25,7 +25,7 @@ SECRET_KEY = '#02jb=d=h*3!5&a=-y8=0_+pr((%pp%60@ds3gvme7q%2-3abe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['47.94.111.176','www.yuntupharm.com',]
+ALLOWED_HOSTS = ['47.94.111.176','www.yuntupharm.com','127.0.0.1']
 
 
 # Application definition

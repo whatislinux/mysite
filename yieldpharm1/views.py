@@ -44,3 +44,11 @@ def products(request):
 def lab(request):
     category_list = Category.objects.all()
     return render(request, 'yieldpharm1/lab.html', {'category_list': category_list})
+
+def news(request):
+    category_list = Category.objects.all()
+    return render(request, 'yieldpharm1/news.html', {'category_list': category_list})
+
+def feedback(request):
+    category_list = Category.objects.all()
+    return render(request, 'yieldpharm1/feedback.html', {'category_list': category_list})

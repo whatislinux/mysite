@@ -18,7 +18,7 @@
                 <th>
                     {% for i in product.molecular_ormula %}
                         {% if i.isalpha %}
-                            <span>{{ i }}</span>
+                            {{ i }}
                         {% else %}
                             <sub>{{ i }}</sub>
                         {% endif %}

@@ -182,8 +182,8 @@
                 <li><a href="/yieldpharm1/aboutus">公司简介</a></li>
                 <li><a href="/yieldpharm1/products">产品介绍</a></li>
                 <li><a href="/yieldpharm1/lab">实验室</a></li>
-                <li><a href="">公司新闻</a></li>
-                <li><a href="">信息反馈</a></li>
+                <li><a href="/yieldpharm1/news">公司新闻</a></li>
+                <li><a href="/yieldpharm1/feedback">信息反馈</a></li>
                 <li><a href="/yieldpharm1/contactus">联系我们</a></li>
             </ul>
         </div>
@@ -226,7 +226,7 @@
 
     </div>
     <div class="foot">
-        版权所有 © 2018 苏州弈德医药科技有限公司
+        版权所有 © 2018-2021 苏州弈德医药科技有限公司 <a href="http://www.miibeian.gov.cn">鲁ICP备18030471</a>
     </div>
 </div>
 
@@ -235,32 +235,35 @@
             var oDiv = document.getElementById("pictures");
             var oUl = document.getElementById("ul1");
             var speed = -1;
-            var oLi = document.getElementsByTagName("li");
+            var oLi = document.getElementsByClassName("recpic");
 
             oUl.innerHTML += oUl.innerHTML;//先把图片增加一组
             oUl.style.width = oLi.length * oLi[0].offsetWidth + "px";
+            //console.log("oLi.length："+oLi.length)
+            //console.log("oLi[0].offsetWidth："+oLi[0].offsetWidth)
+
 
             function move() {
                 if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
                     oUl.style.left = "0";
                 }
-                console.log("oUl.offsetLeft", oUl.offsetLeft)
-                console.log("speed", speed);
-                console.log("oUl.offsetLeft+speed", oUl.offsetLeft + speed);
+                //console.log("oUl.offsetLeft", oUl.offsetLeft)
+                //console.log("speed", speed);
+                //console.log("oUl.offsetLeft+speed", oUl.offsetLeft + speed);
                 oUl.style.left = oUl.offsetLeft + speed + "px";
             }
 
-            var timer = setInterval(move, 10);
+            var timer = setInterval(move, 30);
             console.log(timer)
             oDiv.onmouseover = function () {
-                console.log("onmouseover begin");
+                //console.log("onmouseover begin");
                 clearInterval(timer);
-                console.log("onmouseover end");
+                //console.log("onmouseover end");
             };
             oDiv.onmouseout = function () {
-                console.log("onmouseout begin");
+                //console.log("onmouseout begin");
                 timer = setInterval(move, 30);
-                console.log("onmouseout end")
+                //console.log("onmouseout end")
             };
         }
     </script>

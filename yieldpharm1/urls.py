@@ -10,4 +10,6 @@ urlpatterns=[
     url(r'^contactus/$',views.contactus),
     url(r'^products/$',views.products),
     url(r'^lab/$',views.lab),
+    url(r'^news/$',views.news),
+    url(r'^feedback/$',views.feedback),
 ]
