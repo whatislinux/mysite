@@ -7,7 +7,7 @@ from django.db.models import F,Q
 
 def index(request):
     category_list=Category.objects.all()
-    print(category_list)
+    # print(category_list)
     return render(request,'yieldpharm1/index.html',{'category_list':category_list})
 
 def ydclass(request,ydclass_id):
@@ -18,14 +18,14 @@ def ydclass(request,ydclass_id):
 def detail(request,product_id):
     category_list = Category.objects.all()
     product=Product.objects.get(pk=product_id)
-    print(category_list)
+    # print(category_list)
     return render(request,'yieldpharm1/detail.html',{'product':product,'category_list':category_list})
 
 def search(request):
     category_list = Category.objects.all()
     search_text=request.POST.get('search_text')
     product_list=Product.objects.filter(Q(name__icontains=search_text)|Q(cas_no__icontains=search_text))
-    print(search_text,product_list)
+    # print(search_text,product_list)
     return render(request,'yieldpharm1/search.html',{'product_list':product_list,'category_list':category_list})
 
 def aboutus(request):
@@ -40,3 +40,7 @@ def products(request):
     category_list = Category.objects.all()
     product_list = Product.objects.all()
     return render(request, 'yieldpharm1/products.html', {'product_list': product_list, 'category_list': category_list})
+
+def lab(request):
+    category_list = Category.objects.all()
+    return render(request, 'yieldpharm1/lab.html', {'category_list': category_list})

@@ -9,4 +9,5 @@ urlpatterns=[
     url(r'^aboutus/$',views.aboutus),
     url(r'^contactus/$',views.contactus),
     url(r'^products/$',views.products),
+    url(r'^lab/$',views.lab),
 ]
