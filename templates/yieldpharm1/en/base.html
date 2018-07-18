@@ -165,12 +165,38 @@
         }
 
         .chinese {
-            background-position: 0px 0px;
+            background-position: -39px 0px;
         }
 
         .english {
-            background-position: 0px 0px;
+            background-position: -1px 0px;
         }
+
+        .translate {
+            margin-right: 11px;
+        }
+
+        .translate a {
+            float: left;
+            line-height: 18px;
+            text-decoration: none;
+        }
+
+        .translate a i {
+            display: block;
+            width: 30px;
+            height: 22px;
+            float: left;
+            margin-right: 6px;
+        }
+
+        em {
+            float: left;
+            line-height: 18px;
+            font-style: normal;
+            margin: 0px 8px;
+        }
+
     </style>
 
 </head>
@@ -181,22 +207,22 @@
             <img src="/static/imgs/logo.jpg" alt="logo">
         </div>
         <div class="translate">
-            <a href=""><i class="icon chinese">图片</i>中文</a>
+            <a href="/yieldpharm1/"><i class="icon chinese"></i>中文</a>
             <em>|</em>
-            <a href=""><i class="icon english">图片</i>英文</a>
+            <a href="/yieldpharm1/en/"><i class="icon english"></i>English</a>
         </div>
         <div class="clear">
 
         </div>
         <div class="nav">
             <ul>
-                <li><a href="/yieldpharm1/">网站首页</a></li>
-                <li><a href="/yieldpharm1/aboutus">公司简介</a></li>
-                <li><a href="/yieldpharm1/products">产品介绍</a></li>
-                <li><a href="/yieldpharm1/lab">实验室</a></li>
-                <li><a href="/yieldpharm1/news">公司新闻</a></li>
-                <li><a href="/yieldpharm1/feedback">信息反馈</a></li>
-                <li><a href="/yieldpharm1/contactus">联系我们</a></li>
+                <li><a href="/yieldpharm1/en/">Home</a></li>
+                <li><a href="/yieldpharm1/en/aboutus">About Us</a></li>
+                <li><a href="/yieldpharm1/en/products">Products</a></li>
+                <li><a href="/yieldpharm1/en/lab">Lab</a></li>
+                <li><a href="/yieldpharm1/en/news">News</a></li>
+                <li><a href="/yieldpharm1/en/feedback">Feedback</a></li>
+                <li><a href="/yieldpharm1/en/contactus">Contact Us</a></li>
             </ul>
         </div>
     </div>
@@ -206,26 +232,26 @@
     <div class="content">
         <div class="content_left">
             <div class="search">
-                <div class="title">产品搜索</div>
+                <div class="title">Search</div>
                 <hr width="200">
                 <div>
-                    <form action="/yieldpharm1/search/" method="post">
+                    <form action="/yieldpharm1/en/search/" method="post">
                         {% csrf_token %}
                         <p>
-                            <input type="text" id="search_text" name="search_text" placeholder="请输入产品名称或CAS号" autofocus
+                            <input type="text" id="search_text" name="search_text" placeholder="Input Product or CAS No." autofocus
                                    required/>
-                            <input type="submit" value="搜索">
+                            <input type="submit" value="Go">
                         </p>
                     </form>
                 </div>
             </div>
             <div class="category">
-                <div class="title">产品类别</div>
+                <div class="title">Category</div>
                 <hr width="200">
                 <div>
                     <ul>
                         {% for category in category_list %}
-                            <li><a href="/yieldpharm1/{{ category.id }}">{{ category.name }}</a></li>
+                            <li><a href="/yieldpharm1/en/{{ category.id }}">{{ category.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -238,7 +264,7 @@
 
     </div>
     <div class="foot">
-        版权所有 © 2018-2021 苏州弈德医药科技有限公司 <a href="http://www.miibeian.gov.cn">鲁ICP备18030471</a>
+         All rights reserved © 2018-2021 Yidld Pharmaceutical Technology(Suzhou) CO.,Ltd. <a href="http://www.miibeian.gov.cn">鲁ICP备18030471</a>
     </div>
 </div>
 
