@@ -1,0 +1,42 @@
+{% extends "yieldpharm1/base.html" %}
+
+{% block content_center_right %}
+    <div class="company">
+        <div class="title">公司简介</div>
+        <hr width="700">
+        <div class="company_pic">
+            <img src="/static/imgs/aboutus.jpg" alt="">
+        </div>
+        <p>
+            <b>苏州弈德医药科技有限公司</b>位于苏州工业园区信一药谷，频临美丽的东沙湖风景区，是一个集化工医药中间体研发、生产、进出口贸易于一体的新型化工企业。公司自2015年11月成立以来，主要从事新药研发中所用Building
+            Block，Core Fragment定制合成、定制生产、新药关键中间体合成方法，合成工艺的研究、规模化生产加工，尤其在工艺优化和生产放大方面经验丰富。
+        </p>
+        <p>
+            公司创始人张兰德博士，毕业于南京大学化学化工学院，先后师从胡宏纹院士和姚祝军研究员。博士期间的研究方向是天然产物全合成，并且有十多年工艺优化放大和车间生产经验，尤其对于生产管理有独到的见解...
+        </p>
+    </div>
+{% endblock %}
+
+{% comment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ydclass</title>
+</head>
+<body>
+    <table border="1px" cellspacing="0px" cellpadding="0px">
+        <tr>
+            <td>产品名称</td>
+            <td>CAS号</td>
+        </tr>
+        {% for product in product_list %}
+            <tr>
+                <td><a href="/yieldpharm1/{{ product.id }}/detail">{{ product.name }}</a></td>
+                <td>{{ product.cas_no }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endcomment %}

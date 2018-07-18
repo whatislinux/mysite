@@ -1,0 +1,35 @@
+{% extends "yieldpharm1/base.html" %}
+
+{% block content_center_right %}
+    <div class="contact">
+        <div class="title">公司新闻</div>
+        <hr width="700">
+        <div>
+            攻城师正在开发中......
+        </div>
+    </div>
+{% endblock %}
+
+{% comment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ydclass</title>
+</head>
+<body>
+    <table border="1px" cellspacing="0px" cellpadding="0px">
+        <tr>
+            <td>产品名称</td>
+            <td>CAS号</td>
+        </tr>
+        {% for product in product_list %}
+            <tr>
+                <td><a href="/yieldpharm1/{{ product.id }}/detail">{{ product.name }}</a></td>
+                <td>{{ product.cas_no }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+{% endcomment %}
