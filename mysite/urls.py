@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
+from yieldpharm1 import views
 
 urlpatterns = [
     url(r'^polls/',include('polls.urls')),
     url(r'^yieldpharm1/',include('yieldpharm1.urls')),
+    url(r'^$',views.index),
     url(r'admin/', admin.site.urls),
 ]
