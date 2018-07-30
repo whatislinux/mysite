@@ -7,7 +7,7 @@
         <table border="1px" cellspacing="0px" cellpadding="0px" width="700px">
             <tr>
                 <th>Chemical Name::</th>
-                <th>{{ product.name }}</th>
+                <th>{{ product.name_en }}</th>
             </tr>
             <tr>
                 <th>Cas No.:</th>
@@ -16,7 +16,7 @@
             <tr>
                 <th>Molecular Formula:</th>
                 <th>
-                    {% for i in product.molecular_ormula %}
+                    {% for i in product.molecular_formula %}
                         {% if i.isalpha %}
                             {{ i }}
                         {% else %}
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <th>Molecular Structure:</th>
-                <th><img src="/static/imgs/recommand/{{ product.molecular_structure }}" alt=""></th>
+                <th><img src="/static/imgs/products_imgs/{{ product.molecular_structure }}" alt=""></th>
             </tr>
         </table>
     </div>

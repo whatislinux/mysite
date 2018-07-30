@@ -204,7 +204,9 @@
 <div class="outer">
     <div class="top">
         <div class="logo">
-            <img src="/static/imgs/logo.jpg" alt="logo">
+            <a href="/yieldpharm1/en/">
+                <img src="/static/imgs/logo3.png" alt="logo">
+            </a>
         </div>
         <div class="translate">
             <a href="/yieldpharm1/"><i class="icon chinese"></i>中文</a>
@@ -251,7 +253,7 @@
                 <div>
                     <ul>
                         {% for category in category_list %}
-                            <li><a href="/yieldpharm1/en/{{ category.id }}">{{ category.name }}</a></li>
+                            <li><a href="/yieldpharm1/en/{{ category.id }}">{{ category.name_en }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

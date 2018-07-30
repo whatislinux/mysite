@@ -16,7 +16,7 @@
             <tr>
                 <th>分子式:</th>
                 <th>
-                    {% for i in product.molecular_ormula %}
+                    {% for i in product.molecular_formula %}
                         {% if i.isalpha %}
                             {{ i }}
                         {% else %}
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <th>结构式:</th>
-                <th><img src="/static/imgs/recommand/{{ product.molecular_structure }}" alt=""></th>
+                <th><img src="/static/imgs/products_imgs/{{ product.molecular_structure }}" alt=""></th>
             </tr>
         </table>
     </div>
